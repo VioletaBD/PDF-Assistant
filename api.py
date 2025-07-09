@@ -1,5 +1,3 @@
-# api.py
-
 from fastapi import FastAPI, Request, HTTPException
 from pydantic import BaseModel
 from dotenv import load_dotenv
@@ -34,5 +32,8 @@ async def ask(query: Query, request: Request):
     if token != f"Bearer {API_TOKEN}":
         raise HTTPException(status_code=403, detail="Unauthorized")
 
-    response = qa_chain.run({"question": query.question, "chat_history": []})
-    return {"answer": response}
+    result = qa_chain.invoke({"question": query.question, "chat_history": []})
+    return {
+    "answer": result["answer"],
+    "sources": [doc.metadata.get("source", "") for doc in result["source_documents"]]
+}

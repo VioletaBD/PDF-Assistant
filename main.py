@@ -1,5 +1,3 @@
-# main.py
-
 import os
 import re
 from io import StringIO
@@ -52,12 +50,15 @@ def load_pdf_and_create_vectorstore(pdf_paths):
 # Build conversational QA chain
 def get_qa_chain(vectorstore):
     llm = ChatOpenAI(model="gpt-4o", temperature=0)
-    memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+    memory = ConversationBufferMemory(
+        memory_key="chat_history", 
+        return_messages=True,
+        output_key="answer")
 
     qa_chain = ConversationalRetrievalChain.from_llm(
         llm=llm,
         retriever=vectorstore.as_retriever(),
         memory=memory,
-        return_source_documents=True
+        return_source_documents=True,
     )
     return qa_chain
