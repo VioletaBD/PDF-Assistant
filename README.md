@@ -13,14 +13,14 @@ Assistant IA de Lecture de Documents PDF avec LangChain, FastAPI et déploiement
 ## Structure du projet
 
 my-pdf-assistant/
-├── api.py              # API FastAPI exposant le point /ask
-├── main.py             # Traitement PDF, embeddings, chaîne LangChain
-├── requirements.txt    # Dépendances
-├── .env                # Variables secrètes (API_TOKEN, OPENAI_API_KEY)
-├── pdfs/               # Fichiers PDF à charger
-│   ├── Conditions_Generales_2025_AAV.pdf
-│   └── DIP_AAV_2025.pdf
-└── README.md
+- ├── api.py              # API FastAPI exposant le point /ask
+- ├── main.py             # Traitement PDF, embeddings, chaîne LangChain
+- ├── requirements.txt    # Dépendances
+- ├── .env                # Variables secrètes (API_TOKEN, OPENAI_API_KEY)
+- ├── pdfs/               # Fichiers PDF à charger
+- │   ├── Conditions_Generales_2025_AAV.pdf
+- │   └── DIP_AAV_2025.pdf
+- └── README.md
 
 ## Installation locale
 
@@ -33,8 +33,8 @@ pip install -r requirements.txt
 
 Ajouter un fichier `.env` :
 
-API_TOKEN=chatbot_dojo_pdf_assistant_123456
-OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxx
+- API_TOKEN=chatbot_dojo_pdf_assistant_123456
+- OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxx
 
 ## Lancer le serveur
 
