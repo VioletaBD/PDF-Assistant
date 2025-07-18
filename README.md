@@ -25,10 +25,10 @@ my-pdf-assistant/
 ## Installation locale
 
 bash
-git clone https://github.com/<votre-utilisateur>/my-pdf-assistant.git
+git clone https://github.com/VioletaBD/PDF-Assistant.git
 cd my-pdf-assistant
 python3 -m venv venv
-source venv/bin/activate  # ou .\venv\Scripts\activate sur Windows
+venv\Scripts\activate sur Windows
 pip install -r requirements.txt
 
 Ajouter un fichier `.env` :
